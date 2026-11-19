@@ -11,6 +11,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 | # | Vidéo | Type | Format | Plateforme | Statut | Échéance | Notes |
 |---|-------|------|--------|------------|--------|----------|-------|
 | 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V3 : sous-titre « MORE THAN DANCE » (`Intro`) ou « BIEN PLUS QUE DES COURS DE DANSE » (`Intro-FR`) — choisir la version |
+| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 📥 Attente rushs | — | Maquette prête (`Pub-Formation`) : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
 
 ## Idées / à venir
 
@@ -45,7 +46,13 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 
 - Intro V3 : la signature remplace « Street dance », en anglais et en français.
 
+### Pub Meta — Groupe Formation
+- Maquette 9:16 créée avec emplacements pour 8 plans + carte de fin.
+- Rushs à envoyer : groupe face caméra, entraînement, voyages, cours intensifs, shootings, profs invités, concours, moment collectif.
+
 **Prochaines étapes**
+- [ ] Envoyer les rushs de la pub Formation
+- [ ] Préciser l'appel à l'action (auditions ? date limite ? âge ?)
 - [ ] Choisir la version de l'intro (EN ou FR)
 - [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin
 - [ ] Recevoir les premiers rushs
