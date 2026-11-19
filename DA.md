@@ -12,6 +12,7 @@ L'identité visuelle de toutes les vidéos de l'école. Chaque montage s'appuie 
 - **Types de cours** : **chorégraphie** et **freestyle**.
 - **Mission** : la danse comme **outil de développement personnel** (confiance en soi, expression, dépassement) et comme **préparation physique**.
 - **Public** : **enfants, ados et adultes**.
+- **Signature** : **« More than dance »** (EN) / **« Bien plus que des cours de danse »** (FR) — sous-titre de l'intro et des cartes de fin.
 - **Mots-clés de l'image** : urbain · brut · énergique · épuré · authentique.
 - **Ton des textes** : _À définir_ — tutoiement recommandé pour les réseaux (cohérent avec la culture street). Phrases courtes, verbes d'action.
 - **Références / inspirations** : _À définir_
@@ -60,7 +61,7 @@ La couleur, c'est la vidéo elle-même qui l'apporte (tenues, lumière). Les hab
 
 ## 6. Éléments récurrents
 
-- **Intro** (composition `Intro`) : logo animé, ≈ 3 s. Sur les réseaux, la placer **après** l'accroche ou la raccourcir à 1 s.
+- **Intro** : logo animé + signature, ≈ 3 s. Composition `Intro` (« More than dance ») et `Intro-FR` (« Bien plus que des cours de danse »). Sur les réseaux, la placer **après** l'accroche ou la raccourcir à 1 s.
 - **Carte de fin** : fond noir, logo blanc + appel à l'action + _À définir_ (site mkdstudio.co, Instagram, adresse, téléphone).
 - **Bandeaux de texte** (style de danse, nom du cours, du prof, de l'élève) : Montserrat, blanc, avec un léger fond noir semi-transparent si l'image est claire.
 - **Sous-titres** : _À définir_ — recommandés pour les témoignages et vidéos « développement personnel ».

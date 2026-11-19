@@ -12,7 +12,16 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
-        defaultProps={{ sousTitre: "Street dance" }}
+        defaultProps={{ sousTitre: "More than dance" }}
+      />
+      <Composition
+        id="Intro-FR"
+        component={Intro}
+        durationInFrames={90}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ sousTitre: "Bien plus que des cours de danse" }}
       />
     </>
   );

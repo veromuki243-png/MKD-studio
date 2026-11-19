@@ -10,7 +10,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 
 | # | Vidéo | Type | Format | Plateforme | Statut | Échéance | Notes |
 |---|-------|------|--------|------------|--------|----------|-------|
-| 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V2 : logo blanc sur noir, sous-titre « STREET DANCE » en Montserrat |
+| 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V3 : sous-titre « MORE THAN DANCE » (`Intro`) ou « BIEN PLUS QUE DES COURS DE DANSE » (`Intro-FR`) — choisir la version |
 
 ## Idées / à venir
 
@@ -43,8 +43,10 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 - Intro V2 aux couleurs de l'école.
 - Site mkdstudio.co non accessible depuis l'environnement de montage → infos pratiques à fournir.
 
+- Intro V3 : la signature remplace « Street dance », en anglais et en français.
+
 **Prochaines étapes**
-- [ ] Valider l'intro V2
+- [ ] Choisir la version de l'intro (EN ou FR)
 - [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin
 - [ ] Recevoir les premiers rushs
 - [ ] Choisir le premier montage à réaliser

@@ -26,7 +26,7 @@ export const Intro: React.FC<{ sousTitre: string }> = ({ sousTitre }) => {
     <AbsoluteFill style={{ backgroundColor: "#000", justifyContent: "center", alignItems: "center", fontFamily, color: "#fff" }}>
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: sortie }}>
         <Img src={staticFile("marque/logo-blanc.png")} style={{ width: 760, transform: `scale(${scale})`, opacity: opaciteLogo }} />
-        <div style={{ fontSize: 46, fontWeight: 300, letterSpacing: 14, marginTop: 20, opacity: opaciteSous, textAlign: "center" }}>
+        <div style={{ fontSize: 46, fontWeight: 300, letterSpacing: 14, marginTop: 20, opacity: opaciteSous, textAlign: "center", maxWidth: 900, lineHeight: 1.5 }}>
           {sousTitre.toUpperCase()}
         </div>
       </AbsoluteFill>
