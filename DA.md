@@ -2,77 +2,98 @@
 
 L'identité visuelle de toutes les vidéos de l'école. Chaque montage s'appuie sur ce document pour que les vidéos soient reconnaissables au premier coup d'œil.
 
-> ⚠️ **Document à compléter.** Les valeurs ci-dessous sont **provisoires** (celles de l'intro de test). Remplace-les par les vraies couleurs, polices et logo de l'école. Les champs `À définir` attendent ta réponse.
+> Les éléments marqués _À définir_ attendent encore une réponse ; tout le reste est validé et appliqué.
 
 ---
 
 ## 1. L'esprit
 
-- **Mots-clés de l'école** (3 à 5) : _À définir_ — ex. énergique, élégant, bienveillant, urbain, familial…
-- **Styles de danse enseignés** : _À définir_
-- **Public visé** : _À définir_ — enfants, ados, adultes, débutants, compétiteurs…
-- **Ton des textes** : _À définir_ — tutoiement ou vouvoiement, sérieux ou décontracté, emojis oui/non.
-- **Références / inspirations** : _À définir_ — comptes ou vidéos dont tu aimes le style.
+- **Discipline** : street dance — majoritairement **hip-hop**, **afro** et **breakdance**.
+- **Types de cours** : **chorégraphie** et **freestyle**.
+- **Mission** : la danse comme **outil de développement personnel** (confiance en soi, expression, dépassement) et comme **préparation physique**.
+- **Public** : **enfants, ados et adultes**.
+- **Mots-clés de l'image** : urbain · brut · énergique · épuré · authentique.
+- **Ton des textes** : _À définir_ — tutoiement recommandé pour les réseaux (cohérent avec la culture street). Phrases courtes, verbes d'action.
+- **Références / inspirations** : _À définir_
 
 ## 2. Logo
 
 | Version | Fichier | Usage |
 |---------|---------|-------|
-| Principal | `public/marque/logo.png` _(à fournir)_ | Carte de fin, intro |
-| Blanc / monochrome | `public/marque/logo-blanc.png` _(à fournir)_ | Filigrane sur la vidéo |
+| Blanc, fond transparent | `public/marque/logo-blanc.png` | **Version principale** : sur fond noir ou sur la vidéo (filigrane) |
+| Noir, fond transparent | `public/marque/logo-noir.png` | Sur fond blanc ou images très claires |
+| Original (blanc sur carré noir) | `public/marque/logo-fond-noir.png` | Photo de profil, miniatures |
 
-- Format idéal : PNG à fond transparent ou SVG.
-- Filigrane : coin _À définir_, opacité ≈ 60 %, en dehors des zones de sécurité.
+Description : « MKD » en capitales géométriques très grasses, le K formé de triangles ; un filet fin ; « STUDIO » en capitales fines et très espacées.
+
+- **Filigrane** : logo blanc en bas à droite, opacité ≈ 60 %, au-dessus de la zone de sécurité basse.
+- Ne jamais déformer, colorer ou mettre d'ombre portée sur le logo.
 
 ## 3. Couleurs
 
-| Rôle | Couleur | Code | Statut |
-|------|---------|------|--------|
-| Principale | Bleu nuit | `#1A1A2E` | Provisoire |
-| Secondaire | Prune | `#6A1B4D` | Provisoire |
-| Texte | Blanc | `#FFFFFF` | Provisoire |
-| Accent | _À définir_ | | — |
+L'identité est **strictement noir et blanc**.
 
-Dégradé de fond actuel : bleu nuit → prune, en diagonale.
+| Rôle | Couleur | Code |
+|------|---------|------|
+| Fond principal | Noir | `#000000` |
+| Texte / logo | Blanc | `#FFFFFF` |
+| Texte secondaire | Gris clair | `#BFBFBF` |
+| Accent | _À définir — aucun pour l'instant_ | |
+
+La couleur, c'est la vidéo elle-même qui l'apporte (tenues, lumière). Les habillages restent noir et blanc.
 
 ## 4. Typographie
 
-| Usage | Police | Graisse | Statut |
-|-------|--------|---------|--------|
-| Titres | Helvetica / Arial | Extra-gras (800) | Provisoire |
-| Sous-titres | Helvetica / Arial | Normal, en majuscules, lettres espacées | Provisoire |
-| Textes d'info | _À définir_ | | — |
+**Montserrat** — géométrique, proche du dessin du logo. Fichiers dans `public/polices/` (fonctionne hors ligne).
 
-Une police de Google Fonts peut être intégrée facilement (ex. Montserrat, Bebas Neue, Poppins).
+| Usage | Graisse | Style |
+|-------|---------|-------|
+| Titres, accroches | ExtraBold (800) | Capitales, serré — écho à « MKD » |
+| Sous-titres, infos | Light (300) | Capitales, lettres très espacées — écho à « STUDIO » |
 
 ## 5. Animations et transitions
 
-- **Apparition des titres** : effet rebond (« spring ») — provisoire.
-- **Sous-titres** : fondu.
-- **Transitions entre plans** : _À définir_ — coupe sèche sur le temps (recommandé pour la danse), fondu, glissement…
-- **Rythme** : _À définir_ — dynamique et rapide, ou posé et élégant.
+- **Logo** : apparition avec un léger zoom arrière et rebond (spring), puis sous-titre en fondu. Sortie en fondu au noir.
+- **Transitions entre plans** : **coupe sèche sur le temps** de la musique (par défaut). Flash blanc bref ou fondu au noir en option pour marquer un changement de partie.
+- **Textes** : apparitions franches (fondu court ou glissement court), pas d'effets « gadget ».
+- **Rythme** : dynamique pour les teasers, plus posé pour les vidéos sur le développement personnel.
 
 ## 6. Éléments récurrents
 
-- **Intro** : courte (≤ 1 s sur les réseaux) ou supprimée — l'accroche passe avant le logo.
-- **Carte de fin** : logo + appel à l'action + _À définir_ (site, Instagram, téléphone, adresse).
-- **Bandeaux de texte** (nom de la chorégraphie, du cours, du professeur) : _style à définir_.
-- **Sous-titres** : _À définir_ — oui/non, style.
+- **Intro** (composition `Intro`) : logo animé, ≈ 3 s. Sur les réseaux, la placer **après** l'accroche ou la raccourcir à 1 s.
+- **Carte de fin** : fond noir, logo blanc + appel à l'action + _À définir_ (site mkdstudio.co, Instagram, adresse, téléphone).
+- **Bandeaux de texte** (style de danse, nom du cours, du prof, de l'élève) : Montserrat, blanc, avec un léger fond noir semi-transparent si l'image est claire.
+- **Sous-titres** : _À définir_ — recommandés pour les témoignages et vidéos « développement personnel ».
 
-## 7. Image et couleur des vidéos
+## 7. Image des vidéos
 
-- **Étalonnage** : _À définir_ — naturel, chaud, contrasté, noir et blanc pour certaines vidéos…
+- **Étalonnage** : naturel et contrasté (noirs profonds), légèrement désaturé pour coller à l'identité noir et blanc.
+- **Noir et blanc complet** : possible pour des vidéos « signature » (freestyle, battle, portraits).
 - Uniformiser la luminosité entre les prises d'une même vidéo.
 
 ## 8. Musique et son
 
-- **Univers musical** : _À définir_
-- Son d'ambiance (applaudissements, pas sur le parquet) : à garder ou non.
+- **Univers musical** : hip-hop, afro (afrobeats, afro-house), breakbeat / funk pour le break.
+- Garder le son d'ambiance (cris, applaudissements, pas) sur les moments forts : ça rend l'énergie du studio.
+- Pour Instagram et TikTok, musique ajoutée dans l'application quand c'est possible (droits d'auteur).
 
 ## 9. À éviter
 
-- _À définir_ — ex. textes trop longs, transitions « gadget », filtres trop marqués…
+- Couleurs vives dans les habillages (textes, fonds, bandeaux).
+- Polices fantaisie ou manuscrites.
+- Filtres trop marqués, transitions 3D, effets « gadget ».
+- Textes longs : une idée par écran.
 
 ---
 
-_Dernière mise à jour : 2026-11-19 — version provisoire._
+## Informations de l'école (pour les cartes de fin)
+
+| Info | Valeur |
+|------|--------|
+| Site web | mkdstudio.co |
+| Adresse | _À définir_ |
+| Instagram / TikTok | _À définir_ |
+| Téléphone / e-mail | _À définir_ |
+| Cours d'essai / offre | _À définir_ |
+
+_Dernière mise à jour : 2026-11-19._

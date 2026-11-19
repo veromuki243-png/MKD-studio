@@ -10,7 +10,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 
 | # | Vidéo | Type | Format | Plateforme | Statut | Échéance | Notes |
 |---|-------|------|--------|------------|--------|----------|-------|
-| 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | Version provisoire : couleurs et police à remplacer par la DA définitive |
+| 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V2 : logo blanc sur noir, sous-titre « STREET DANCE » en Montserrat |
 
 ## Idées / à venir
 
@@ -35,7 +35,16 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 - Création de la composition `Intro` (1080×1920, 30 i/s, 3 s) : premier rendu de test réussi.
 - Création des fichiers `SUIVI.md`, `METHODE.md` et `DA.md`.
 
+- Remotion configuré pour utiliser le Chromium installé (téléchargement bloqué par le réseau).
+
+### 2026-11-19 (suite)
+- Logo reçu → versions blanche et noire à fond transparent dans `public/marque/`.
+- DA complétée : noir et blanc, police Montserrat, street dance (hip-hop, afro, break), développement personnel et préparation physique, public enfants / ados / adultes.
+- Intro V2 aux couleurs de l'école.
+- Site mkdstudio.co non accessible depuis l'environnement de montage → infos pratiques à fournir.
+
 **Prochaines étapes**
-- [ ] Recevoir le logo, les couleurs et la police de l'école → compléter `DA.md`
+- [ ] Valider l'intro V2
+- [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin
 - [ ] Recevoir les premiers rushs
 - [ ] Choisir le premier montage à réaliser

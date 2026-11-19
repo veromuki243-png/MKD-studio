@@ -12,7 +12,7 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
-        defaultProps={{ titre: "MKD Studio", sousTitre: "École de danse" }}
+        defaultProps={{ sousTitre: "Street dance" }}
       />
     </>
   );

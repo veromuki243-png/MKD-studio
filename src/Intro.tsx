@@ -1,26 +1,35 @@
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 
-export const Intro: React.FC<{ titre: string; sousTitre: string }> = ({ titre, sousTitre }) => {
+import { POLICE } from "./polices";
+
+const fontFamily = POLICE;
+
+export const Intro: React.FC<{ sousTitre: string }> = ({ sousTitre }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
 
-  const scale = spring({ frame, fps, config: { damping: 12 } });
-  const opacitySous = interpolate(frame, [20, 40], [0, 1], { extrapolateRight: "clamp" });
+  // Le logo arrive avec un léger rebond, en partant un peu plus grand
+  const entree = spring({ frame, fps, config: { damping: 14, mass: 0.6 } });
+  const scale = interpolate(entree, [0, 1], [1.25, 1]);
+  const opaciteLogo = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" });
+
+  // Le sous-titre apparaît après le logo
+  const opaciteSous = interpolate(frame, [24, 38], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+
+  // Fondu au noir final
+  const sortie = interpolate(frame, [durationInFrames - 10, durationInFrames], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   return (
-    <AbsoluteFill
-      style={{
-        background: "linear-gradient(160deg, #1a1a2e 0%, #6a1b4d 100%)",
-        justifyContent: "center",
-        alignItems: "center",
-        fontFamily: "Helvetica, Arial, sans-serif",
-        color: "white",
-      }}
-    >
-      <div style={{ fontSize: 150, fontWeight: 800, transform: `scale(${scale})` }}>{titre}</div>
-      <div style={{ fontSize: 64, marginTop: 30, opacity: opacitySous, letterSpacing: 8 }}>
-        {sousTitre.toUpperCase()}
-      </div>
+    <AbsoluteFill style={{ backgroundColor: "#000", justifyContent: "center", alignItems: "center", fontFamily, color: "#fff" }}>
+      <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: sortie }}>
+        <Img src={staticFile("marque/logo-blanc.png")} style={{ width: 760, transform: `scale(${scale})`, opacity: opaciteLogo }} />
+        <div style={{ fontSize: 46, fontWeight: 300, letterSpacing: 14, marginTop: 20, opacity: opaciteSous, textAlign: "center" }}>
+          {sousTitre.toUpperCase()}
+        </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
