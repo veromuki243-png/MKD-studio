@@ -57,6 +57,6 @@ export const ADULTES_V4: CheckListProps = {
   clips: [{ rush: D(5), debut: 0, duree: 9 }, { rush: D(4), debut: 0.3, duree: 1.8 }],
   surtitre: "Cours adultes · MKD Studio",
   titre: "Ton jeudi soir",
-  liste: ["Afterwork dance", "Hip-hop", "Zéro prise de tête", "Ambiance garantie", "Lâcher prise"],
+  liste: ["Afterwork dance", "Hip-hop", "Zéro prise de tête", "Ambiance garantie", "Nouvelles rencontres"],
   fin: FIN,
 };
