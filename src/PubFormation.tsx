@@ -14,7 +14,8 @@ import { POLICE } from "./polices";
 // Pub Meta « Groupe Formation » — 9:16 (Reels / Stories), textes dans la zone centrale
 // pour qu'un recadrage 4:5 (fil d'actualité) reste lisible.
 
-type Clip = { rush: string; debut: number; duree: number }; // rush = chemin dans public/
+// rush = chemin dans public/ · duree = durée à l'écran · vitesse < 1 = ralenti
+type Clip = { rush: string; debut: number; duree: number; vitesse?: number };
 
 type Plan = {
   texte: string; // texte affiché
@@ -32,15 +33,13 @@ const R = (n: number) => `rushs/formation/rush${n}.mp4`;
 
 export const PLANS_PAR_DEFAUT: PubFormationProps = {
   plans: [
-    { texte: "T'as envie de faire partie du groupe ?", clips: [{ rush: R(2), debut: 13.6, duree: 3 }], duree: 3, placeholder: "Le groupe en ligne, sur un temps fort" },
+    { texte: "T'as envie de faire partie d'un groupe de danse ?", clips: [{ rush: R(1), debut: 0, duree: 1.9, vitesse: 0.75 }, { rush: R(1), debut: 1.45, duree: 0.95 }], duree: 2.85, placeholder: "Couloir + studio" },
     { texte: "Le groupe formation", petit: "MKD Studio", enHaut: true, clips: [{ rush: R(5), debut: 0, duree: 2.5 }], duree: 2.5, placeholder: "Le groupe avec les lettres MKD" },
     { texte: "Voyages", clips: [{ rush: R(1), debut: 5.7, duree: 1.2 }, { rush: R(1), debut: 8.45, duree: 1.3 }], duree: 2.5, placeholder: "Aéroport + ville" },
     { texte: "Cours intensifs", clips: [{ rush: R(4), debut: 10.7, duree: 2.2 }], duree: 2.2, placeholder: "Travail au sol" },
     { texte: "Shootings", petit: "Photo & vidéo", clips: [{ rush: R(3), debut: 0.4, duree: 2.3 }], duree: 2.3, placeholder: "Backstage shooting" },
     { texte: "Profs invités", clips: [{ rush: R(1), debut: 2.42, duree: 1.2 }, { rush: R(2), debut: 10.8, duree: 1.2 }], duree: 2.4, placeholder: "Profs en cours" },
-    // ⚠️ Provisoire : aucune image de concours reçue pour l'instant
-    { texte: "Concours", clips: [{ rush: R(6), debut: 4.3, duree: 2.2 }], duree: 2.2, placeholder: "Scène / battle / podium" },
-    { texte: "More than dance", clips: [{ rush: R(1), debut: 0, duree: 1.4 }, { rush: R(2), debut: 20, duree: 1.3 }], duree: 2.7, placeholder: "Moment collectif" },
+    { texte: "More than dance", clips: [{ rush: R(6), debut: 4.5, duree: 1.3 }, { rush: R(2), debut: 20, duree: 1.4 }], duree: 2.7, placeholder: "Moment collectif" },
   ],
   cta: "Inscriptions ouvertes",
   ctaInfos: ["Groupes ados & adultes", "Dès 11 ans"],
@@ -71,7 +70,7 @@ const Texte: React.FC<{ texte: string; petit?: string; grand: boolean; enHaut?: 
         style={{
           fontFamily: POLICE,
           fontWeight: 800,
-          fontSize: grand ? 110 : 130,
+          fontSize: grand ? 100 : 130,
           lineHeight: 1.05,
           color: "#fff",
           textTransform: "uppercase",
@@ -103,7 +102,7 @@ const Clips: React.FC<{ clips: Clip[] }> = ({ clips }) => {
         t += d;
         return (
           <Sequence key={j} from={from} durationInFrames={d}>
-            <OffthreadVideo src={staticFile(c.rush)} startFrom={Math.round(c.debut * fps)} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <OffthreadVideo src={staticFile(c.rush)} startFrom={Math.round(c.debut * fps)} playbackRate={c.vitesse ?? 1} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </Sequence>
         );
       })}

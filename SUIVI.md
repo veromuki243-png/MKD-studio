@@ -11,7 +11,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 | # | Vidéo | Type | Format | Plateforme | Statut | Échéance | Notes |
 |---|-------|------|--------|------------|--------|----------|-------|
 | 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V3 : sous-titre « MORE THAN DANCE » (`Intro`) ou « BIEN PLUS QUE DES COURS DE DANSE » (`Intro-FR`) — choisir la version |
-| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V1 montée avec les rushs (`Pub-Formation`, ≈ 23 s, sans musique). Plan « Concours » provisoire. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
+| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V2 (`Pub-Formation`, ≈ 21 s, sans musique) : accroche « T'as envie de faire partie d'un groupe de danse ? » sur le couloir (ralenti), rubrique Concours retirée. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
 
 ## Idées / à venir
 
@@ -55,11 +55,11 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - rush4 : cours dans la grande salle, travail au sol
   - rush5 : photo de groupe avec les lettres MKD
   - rush6 : danse à deux, caméra à la main
-- V1 montée. Manque : images de concours, musique.
+- V1 montée.
+- V2 : nouvelle accroche sur la vidéo du couloir, rubrique « Concours » supprimée. Manque : musique.
 
 **Prochaines étapes**
-- [ ] Valider la V1 de la pub Formation
-- [ ] Envoyer des images de concours
+- [ ] Valider la V2 de la pub Formation
 - [ ] Choisir la musique
 - [ ] Choisir la version de l'intro (EN ou FR)
 - [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin
