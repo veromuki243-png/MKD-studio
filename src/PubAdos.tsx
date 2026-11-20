@@ -1,10 +1,10 @@
-import { AbsoluteFill, interpolate, OffthreadVideo, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, Sequence, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { POLICE } from "./polices";
 import { CarteFin, Clip, Clips, Flash, PubFormationProps, SECONDES_CTA, Texte } from "./PubFormation";
 
 // Pubs Meta « Cours ados » — 4 versions, 9:16.
-// Rushs par style (validé par l'école) : hip-hop = ado7, 11, 12, 13, 15 · afro = ado3, 6, 9, 10 · freestyle = ado14, 16
-// Messages : hip-hop & afro · freestyle & chorés commerciales · mercredi & jeudi · dès 11 ans.
+// Rushs par style (validé par l'école) : hip-hop = ado7, 11, 12, 13, 15, 17 (trio, extrait de 15), 18 (groupe, extrait de 1) · afro = ado3, 6, 9, 10 · freestyle = ado14, 16
+// Messages : hip-hop & afro · freestyle & chorégraphie · mercredi & jeudi · dès 11 ans.
 
 const A = (n: number) => `rushs/ados/ado${n}.mp4`;
 
@@ -15,10 +15,10 @@ export const ADOS_V1: PubFormationProps = {
   plans: [
     { texte: "Tu cherches un cours de danse ?", clips: [{ rush: A(1), debut: 0, duree: 2.6 }], duree: 2.6, placeholder: "" },
     { texte: "Cours ados", petit: "MKD Studio", clips: [{ rush: A(2), debut: 0.5, duree: 2.2 }], duree: 2.2, placeholder: "" },
-    { texte: "Hip-hop", clips: [{ rush: A(15), debut: 5, duree: 2.2 }], duree: 2.2, placeholder: "" },
+    { texte: "Hip-hop", clips: [{ rush: A(17), debut: 0.2, duree: 2.2 }], duree: 2.2, placeholder: "" },
     { texte: "Afro", clips: [{ rush: A(9), debut: 2, duree: 2 }], duree: 2, placeholder: "" },
     { texte: "Freestyle", clips: [{ rush: A(16), debut: 0, duree: 2.2 }], duree: 2.2, placeholder: "" },
-    { texte: "Chorés commerciales", clips: [{ rush: A(4), debut: 1, duree: 2.3 }], duree: 2.3, placeholder: "" },
+    { texte: "Chorégraphie", clips: [{ rush: A(4), debut: 1, duree: 1.3 }, { rush: A(18), debut: 3, duree: 1.3 }], duree: 2.6, placeholder: "" },
     { texte: "Mercredi & jeudi", clips: [{ rush: A(8), debut: 0.5, duree: 2.4 }], duree: 2.4, placeholder: "" },
   ],
   ...FIN,
@@ -29,10 +29,11 @@ export const ADOS_V1: PubFormationProps = {
 // ───────────── V2 « Rythme » : mots-chocs, coupes rapides ─────────────
 export const ADOS_V2: PubFormationProps = {
   plans: [
-    { texte: "Hip-hop", clips: [{ rush: A(12), debut: 1, duree: 1.2 }], duree: 1.2, placeholder: "" },
+    { texte: "Hip-hop", clips: [{ rush: A(18), debut: 0.5, duree: 1.2 }], duree: 1.2, placeholder: "" },
     { texte: "Afro", clips: [{ rush: A(10), debut: 10, duree: 1.2 }], duree: 1.2, placeholder: "" },
     { texte: "Freestyle", clips: [{ rush: A(14), debut: 0.3, duree: 1.2 }], duree: 1.2, placeholder: "" },
-    { texte: "Chorés", petit: "commerciales", clips: [{ rush: A(8), debut: 2, duree: 1.4 }], duree: 1.4, placeholder: "" },
+    // Le groupe (ado18) est déjà utilisé pour le hip-hop dans cette version : on garde le quatuor seul
+    { texte: "Chorégraphie", clips: [{ rush: A(8), debut: 2, duree: 1.4 }], duree: 1.4, placeholder: "" },
     { texte: "Tous les mercredis & jeudis", clips: [{ rush: A(7), debut: 0, duree: 1.4 }, { rush: A(5), debut: 1, duree: 1.4 }], duree: 2.8, placeholder: "" },
     { texte: "Pour les ados", petit: "Dès 11 ans", clips: [{ rush: A(2), debut: 4.5, duree: 2.2 }], duree: 2.2, placeholder: "" },
   ],
@@ -41,13 +42,6 @@ export const ADOS_V2: PubFormationProps = {
 };
 
 // ───────────── utilitaires communs V3 / V4 ─────────────
-const Video: React.FC<{ clip: Clip }> = ({ clip }) => {
-  const { fps } = useVideoConfig();
-  return (
-    <OffthreadVideo src={staticFile(clip.rush)} startFrom={Math.round(clip.debut * fps)} playbackRate={clip.vitesse ?? 1} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-  );
-};
-
 const Etiquette: React.FC<{ texte: string; retard?: number }> = ({ texte, retard = 0 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -74,15 +68,16 @@ const Etiquette: React.FC<{ texte: string; retard?: number }> = ({ texte, retard
 };
 
 // ───────────── V3 « Écran partagé » : les styles face à face ─────────────
-type Duo = { haut: Clip; bas: Clip; texteHaut: string; texteBas: string };
+type Duo = { haut: Clip | Clip[]; bas: Clip | Clip[]; texteHaut: string; texteBas: string };
+const liste = (c: Clip | Clip[]) => (Array.isArray(c) ? c : [c]);
 
 const Partage: React.FC<Duo> = ({ haut, bas, texteHaut, texteBas }) => (
   <AbsoluteFill>
     <div style={{ position: "absolute", top: 0, left: 0, width: 1080, height: 957, overflow: "hidden" }}>
-      <Video clip={haut} />
+      <Clips clips={liste(haut)} />
     </div>
     <div style={{ position: "absolute", top: 963, left: 0, width: 1080, height: 957, overflow: "hidden" }}>
-      <Video clip={bas} />
+      <Clips clips={liste(bas)} />
     </div>
     <div style={{ position: "absolute", top: 957, left: 0, width: 1080, height: 6, backgroundColor: "#fff" }} />
     <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 120 }}>
@@ -109,14 +104,14 @@ export const PubAdosV3: React.FC = () => {
       <Sequence {...at(V3_SEQ.intro)}>
         <Clips clips={[{ rush: A(10), debut: 0, duree: V3_SEQ.intro }]} />
         <AbsoluteFill style={{ background: "rgba(0,0,0,0.3)" }} />
-        <Texte texte="Cours ados" petit="Le programme" grand={false} />
+        <Texte texte="Cours ados" grand={false} />
       </Sequence>
       <Sequence {...at(V3_SEQ.duo1)}>
         <Partage haut={{ rush: A(11), debut: 1, duree: 3 }} bas={{ rush: A(9), debut: 3, duree: 3 }} texteHaut="Hip-hop" texteBas="Afro" />
         <Flash />
       </Sequence>
       <Sequence {...at(V3_SEQ.duo2)}>
-        <Partage haut={{ rush: A(14), debut: 0, duree: 3 }} bas={{ rush: A(4), debut: 3, duree: 3 }} texteHaut="Freestyle" texteBas="Chorés commerciales" />
+        <Partage haut={{ rush: A(14), debut: 0, duree: 3 }} bas={[{ rush: A(4), debut: 3, duree: 1.4 }, { rush: A(18), debut: 3, duree: 1.4 }]} texteHaut="Freestyle" texteBas="Chorégraphie" />
         <Flash />
       </Sequence>
       <Sequence {...at(V3_SEQ.jours)}>
@@ -131,7 +126,7 @@ export const PubAdosV3: React.FC = () => {
 };
 
 // ───────────── V4 « Check-list » : un seul plan immersif, infos qui s'empilent ─────────────
-const V4_LISTE = ["Hip-hop", "Afro", "Freestyle", "Chorés commerciales", "Mercredi & jeudi"];
+const V4_LISTE = ["Hip-hop", "Afro", "Freestyle", "Chorégraphie", "Mercredi & jeudi"];
 const V4_TITRE = 2.2; // secondes avant le 1er élément
 const V4_PAS = 1.6; // secondes entre deux éléments
 const V4_FIN_LISTE = 2.2; // temps de lecture après le dernier élément

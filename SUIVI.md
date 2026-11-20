@@ -12,7 +12,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 |---|-------|------|--------|------------|--------|----------|-------|
 | 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V3 : sous-titre « MORE THAN DANCE » (`Intro`) ou « BIEN PLUS QUE DES COURS DE DANSE » (`Intro-FR`) — choisir la version |
 | 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V4 (`Pub-Formation`, ≈ 19 s, sans musique) : « Envie de faire partie d'un groupe de danse ? » → Groupe formation → Voyages → Cours intensifs → Shootings → Et bien plus… → fin. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
-| 003 | Pub Meta — Cours ados (4 versions) | Publicité A/B | 9:16 · 13–19 s | Meta | 👀 À valider | — | V1 Question · V2 Rythme · V3 Écran partagé · V4 Check-list. Messages : hip-hop & afro, freestyle & chorés commerciales, mercredi & jeudi, dès 11 ans |
+| 003 | Pub Meta — Cours ados (4 versions) | Publicité A/B | 9:16 · 13–19 s | Meta | 👀 À valider | — | V1 Question · V2 Rythme · V3 Écran partagé · V4 Check-list. Messages : hip-hop & afro, freestyle & chorégraphie, mercredi & jeudi, dès 11 ans |
 
 ## Idées / à venir
 
@@ -66,9 +66,10 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 - 4 versions pour tester sur Meta :
   - `Pub-Ados-V1-Question` (19 s) : « Tu cherches un cours de danse ? » → une rubrique par message
   - `Pub-Ados-V2-Rythme` (13,5 s) : mots-chocs, coupes rapides
-  - `Pub-Ados-V3-Ecran-partage` (14,5 s) : deux vidéos face à face (hip-hop/afro, freestyle/chorés, mercredi/jeudi)
+  - `Pub-Ados-V3-Ecran-partage` (14,5 s) : deux vidéos face à face (hip-hop/afro, freestyle/chorégraphie, mercredi/jeudi)
   - `Pub-Ados-V4-Check-list` (14,3 s) : un seul plan, check-list qui se remplit
 - Correction : les plans « hip-hop » étaient de l'afro. 6 nouveaux rushs (ado11…16). Classement validé : hip-hop = ado7, 11, 12, 13, 15 · afro = ado3, 6, 9, 10 · freestyle = ado14, 16. V1, V2, V3 mises à jour.
+- Retours : « Chorés commerciales » → « Chorégraphie » partout ; V1 hip-hop = trio (ado17) ; V2 hip-hop = groupe (ado18) ; plan groupe ajouté à la chorégraphie (V1, V3) ; « Le programme » retiré de l'intro V3.
 
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation
