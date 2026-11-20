@@ -34,12 +34,11 @@ const R = (n: number) => `rushs/formation/rush${n}.mp4`;
 export const PLANS_PAR_DEFAUT: PubFormationProps = {
   plans: [
     { texte: "T'as envie de faire partie d'un groupe de danse ?", clips: [{ rush: R(1), debut: 0, duree: 1.9, vitesse: 0.75 }, { rush: R(1), debut: 1.45, duree: 0.95 }], duree: 2.85, placeholder: "Couloir + studio" },
-    { texte: "Le groupe formation", petit: "MKD Studio", enHaut: true, clips: [{ rush: R(5), debut: 0, duree: 2.5 }], duree: 2.5, placeholder: "Le groupe avec les lettres MKD" },
+    { texte: "Le groupe formation", petit: "MKD Studio", enHaut: true, clips: [{ rush: R(7), debut: 0.5, duree: 2 }, { rush: R(8), debut: 0.3, duree: 1.5 }], duree: 3.5, placeholder: "Le groupe formation en cours" },
     { texte: "Voyages", clips: [{ rush: R(1), debut: 5.7, duree: 1.2 }, { rush: R(1), debut: 8.45, duree: 1.3 }], duree: 2.5, placeholder: "Aéroport + ville" },
     { texte: "Cours intensifs", clips: [{ rush: R(4), debut: 10.7, duree: 2.2 }], duree: 2.2, placeholder: "Travail au sol" },
-    { texte: "Shootings", petit: "Photo & vidéo", clips: [{ rush: R(3), debut: 0.4, duree: 2.3 }], duree: 2.3, placeholder: "Backstage shooting" },
-    { texte: "Profs invités", clips: [{ rush: R(1), debut: 2.42, duree: 1.2 }, { rush: R(2), debut: 10.8, duree: 1.2 }], duree: 2.4, placeholder: "Profs en cours" },
-    { texte: "More than dance", clips: [{ rush: R(6), debut: 4.5, duree: 1.3 }, { rush: R(2), debut: 20, duree: 1.4 }], duree: 2.7, placeholder: "Moment collectif" },
+    { texte: "Shootings", petit: "Photo & vidéo", enHaut: true, clips: [{ rush: R(3), debut: 0.4, duree: 1.4 }, { rush: R(5), debut: 0, duree: 1.6 }], duree: 3, placeholder: "Backstage shooting + photo de groupe MKD" },
+    { texte: "Profs invités", clips: [{ rush: R(1), debut: 2.42, duree: 1.5, vitesse: 0.8 }], duree: 1.5, placeholder: "Prof invité en cours" },
   ],
   cta: "Inscriptions ouvertes",
   ctaInfos: ["Groupes ados & adultes", "Dès 11 ans"],
@@ -83,7 +82,7 @@ const Texte: React.FC<{ texte: string; petit?: string; grand: boolean; enHaut?: 
         {texte}
       </div>
       {petit && (
-        <div style={{ fontFamily: POLICE, fontWeight: 300, fontSize: 46, letterSpacing: 14, color: "#fff", marginTop: 30, textTransform: "uppercase", opacity: interpolate(frame, [6, 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        <div style={{ fontFamily: POLICE, fontWeight: 300, fontSize: 46, letterSpacing: 14, color: "#fff", marginTop: 30, textShadow: "0 2px 18px rgba(0,0,0,0.9)", textTransform: "uppercase", opacity: interpolate(frame, [6, 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
           {petit}
         </div>
       )}
