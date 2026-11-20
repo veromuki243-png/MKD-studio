@@ -11,7 +11,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 | # | Vidéo | Type | Format | Plateforme | Statut | Échéance | Notes |
 |---|-------|------|--------|------------|--------|----------|-------|
 | 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V3 : sous-titre « MORE THAN DANCE » (`Intro`) ou « BIEN PLUS QUE DES COURS DE DANSE » (`Intro-FR`) — choisir la version |
-| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 📥 Attente rushs | — | Maquette prête (`Pub-Formation`) : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
+| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V1 montée avec les rushs (`Pub-Formation`, ≈ 23 s, sans musique). Plan « Concours » provisoire. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
 
 ## Idées / à venir
 
@@ -48,11 +48,19 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 
 ### Pub Meta — Groupe Formation
 - Maquette 9:16 créée avec emplacements pour 8 plans + carte de fin.
-- Rushs à envoyer : groupe face caméra, entraînement, voyages, cours intensifs, shootings, profs invités, concours, moment collectif.
+- 2026-11-20 : 6 rushs reçus, convertis en H.264 1080×1920 30 i/s (`public/rushs/formation/rush1…6.mp4`).
+  - rush1 : montage existant (couloir, prof, cours d'anatomie, aéroport, soirée, ville)
+  - rush2 : grand cours en ligne avec prof en rouge
+  - rush3 : backstage shooting studio
+  - rush4 : cours dans la grande salle, travail au sol
+  - rush5 : photo de groupe avec les lettres MKD
+  - rush6 : danse à deux, caméra à la main
+- V1 montée. Manque : images de concours, musique.
 
 **Prochaines étapes**
-- [ ] Envoyer les rushs de la pub Formation
-- [ ] Préciser l'appel à l'action (auditions ? date limite ? âge ?)
+- [ ] Valider la V1 de la pub Formation
+- [ ] Envoyer des images de concours
+- [ ] Choisir la musique
 - [ ] Choisir la version de l'intro (EN ou FR)
 - [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin
 - [ ] Recevoir les premiers rushs
