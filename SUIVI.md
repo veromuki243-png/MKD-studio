@@ -69,7 +69,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - `Pub-Ados-V3-Ecran-partage` (14,5 s) : deux vidéos face à face (hip-hop/afro, freestyle/chorégraphie, mercredi/jeudi)
   - `Pub-Ados-V4-Check-list` (14,3 s) : un seul plan, check-list qui se remplit
 - Correction : les plans « hip-hop » étaient de l'afro. 6 nouveaux rushs (ado11…16). Classement validé : hip-hop = ado7, 11, 12, 13, 15 · afro = ado3, 6, 9, 10 · freestyle = ado14, 16. V1, V2, V3 mises à jour.
-- Retours : « Chorés commerciales » → « Chorégraphie » partout ; V1 hip-hop = trio (ado17) ; V2 hip-hop = groupe (ado18) ; plan groupe ajouté à la chorégraphie (V1, V3) ; « Le programme » retiré de l'intro V3.
+- Retours : « Chorés commerciales » → « Chorégraphie » partout ; V1 hip-hop = trio (ado17) ; V2 hip-hop = groupe (ado18) ; chorégraphie V1 et V3 = groupe seul (ado18) ; « Le programme » retiré de l'intro V3.
 
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation

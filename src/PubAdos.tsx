@@ -18,7 +18,7 @@ export const ADOS_V1: PubFormationProps = {
     { texte: "Hip-hop", clips: [{ rush: A(17), debut: 0.2, duree: 2.2 }], duree: 2.2, placeholder: "" },
     { texte: "Afro", clips: [{ rush: A(9), debut: 2, duree: 2 }], duree: 2, placeholder: "" },
     { texte: "Freestyle", clips: [{ rush: A(16), debut: 0, duree: 2.2 }], duree: 2.2, placeholder: "" },
-    { texte: "Chorégraphie", clips: [{ rush: A(4), debut: 1, duree: 1.3 }, { rush: A(18), debut: 3, duree: 1.3 }], duree: 2.6, placeholder: "" },
+    { texte: "Chorégraphie", clips: [{ rush: A(18), debut: 2.5, duree: 2.6 }], duree: 2.6, placeholder: "" },
     { texte: "Mercredi & jeudi", clips: [{ rush: A(8), debut: 0.5, duree: 2.4 }], duree: 2.4, placeholder: "" },
   ],
   ...FIN,
@@ -111,7 +111,7 @@ export const PubAdosV3: React.FC = () => {
         <Flash />
       </Sequence>
       <Sequence {...at(V3_SEQ.duo2)}>
-        <Partage haut={{ rush: A(14), debut: 0, duree: 3 }} bas={[{ rush: A(4), debut: 3, duree: 1.4 }, { rush: A(18), debut: 3, duree: 1.4 }]} texteHaut="Freestyle" texteBas="Chorégraphie" />
+        <Partage haut={{ rush: A(14), debut: 0, duree: 3 }} bas={{ rush: A(18), debut: 2.5, duree: 3 }} texteHaut="Freestyle" texteBas="Chorégraphie" />
         <Flash />
       </Sequence>
       <Sequence {...at(V3_SEQ.jours)}>
