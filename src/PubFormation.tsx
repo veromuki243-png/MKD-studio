@@ -15,9 +15,9 @@ import { POLICE } from "./polices";
 // pour qu'un recadrage 4:5 (fil d'actualité) reste lisible.
 
 // rush = chemin dans public/ · duree = durée à l'écran · vitesse < 1 = ralenti
-type Clip = { rush: string; debut: number; duree: number; vitesse?: number };
+export type Clip = { rush: string; debut: number; duree: number; vitesse?: number };
 
-type Plan = {
+export type Plan = {
   texte: string; // texte affiché
   petit?: string; // ligne secondaire
   clips?: Clip[]; // un ou plusieurs extraits enchaînés sous le même texte
@@ -28,7 +28,7 @@ type Plan = {
 
 export type PubFormationProps = { plans: Plan[]; cta: string; ctaInfos: string[]; ctaBouton: string };
 
-const dureePlan = (p: Plan) => (p.clips ? p.clips.reduce((t, c) => t + c.duree, 0) : p.duree);
+export const dureePlan = (p: Plan) => (p.clips ? p.clips.reduce((t, c) => t + c.duree, 0) : p.duree);
 const R = (n: number) => `rushs/formation/rush${n}.mp4`;
 
 export const PLANS_PAR_DEFAUT: PubFormationProps = {
@@ -45,7 +45,7 @@ export const PLANS_PAR_DEFAUT: PubFormationProps = {
   ctaBouton: "Inscris-toi",
 };
 
-const SECONDES_CTA = 3.5;
+export const SECONDES_CTA = 3.5;
 
 export const dureePub = (p: PubFormationProps, fps: number) =>
   Math.round((p.plans.reduce((t, x) => t + dureePlan(x), 0) + SECONDES_CTA) * fps);
@@ -59,17 +59,21 @@ const Placeholder: React.FC<{ description: string; index: number }> = ({ descrip
   </AbsoluteFill>
 );
 
-const Texte: React.FC<{ texte: string; petit?: string; grand: boolean; enHaut?: boolean }> = ({ texte, petit, grand, enHaut }) => {
+export const Texte: React.FC<{ texte: string; petit?: string; grand: boolean; enHaut?: boolean }> = ({ texte, petit, grand, enHaut }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const entree = spring({ frame, fps, config: { damping: 15, mass: 0.5 } });
+  // Réduit la taille si un mot est trop long pour tenir dans la largeur
+  const motLePlusLong = Math.max(...texte.split(" ").map((m) => m.length));
+  const base = grand ? 100 : 130;
+  const taille = motLePlusLong > 9 ? Math.round((base * 9) / motLePlusLong) : base;
   return (
     <AbsoluteFill style={{ justifyContent: enHaut ? "flex-start" : "center", alignItems: "center", padding: 80, paddingTop: enHaut ? 330 : 80 }}>
       <div
         style={{
           fontFamily: POLICE,
           fontWeight: 800,
-          fontSize: grand ? 100 : 130,
+          fontSize: taille,
           lineHeight: 1.05,
           color: "#fff",
           textTransform: "uppercase",
@@ -90,7 +94,7 @@ const Texte: React.FC<{ texte: string; petit?: string; grand: boolean; enHaut?: 
   );
 };
 
-const Clips: React.FC<{ clips: Clip[] }> = ({ clips }) => {
+export const Clips: React.FC<{ clips: Clip[] }> = ({ clips }) => {
   const { fps } = useVideoConfig();
   let t = 0;
   return (
@@ -109,12 +113,12 @@ const Clips: React.FC<{ clips: Clip[] }> = ({ clips }) => {
   );
 };
 
-const Flash: React.FC = () => {
+export const Flash: React.FC = () => {
   const frame = useCurrentFrame();
   return <AbsoluteFill style={{ backgroundColor: "#fff", opacity: interpolate(frame, [0, 4], [0.7, 0], { extrapolateRight: "clamp" }) }} />;
 };
 
-const CarteFin: React.FC<{ cta: string; ctaInfos: string[]; ctaBouton: string }> = ({ cta, ctaInfos, ctaBouton }) => {
+export const CarteFin: React.FC<{ cta: string; ctaInfos: string[]; ctaBouton: string }> = ({ cta, ctaInfos, ctaBouton }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = spring({ frame, fps, config: { damping: 14 } });
