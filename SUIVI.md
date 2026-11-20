@@ -79,7 +79,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - `Pub-Adultes-V1-Question` (20 s) : « Envie de te détendre après le boulot ? » → Ne pense à rien → Amuse-toi → Afterwork dance → Hip-hop → Chaque jeudi → Ambiance garantie
   - `Pub-Adultes-V2-Metro-boulot-dodo` (14 s) : cartons noirs « Métro. Boulot. Dodo ? » → « Pas le jeudi. » → Afterwork, Hip-hop, Zéro prise de tête, Ambiance garantie
   - `Pub-Adultes-V3-Ecran-partage` (14,5 s) : Afterwork/Hip-hop · Détente/Ambiance · Chaque/Jeudi
-  - `Pub-Adultes-V4-Check-list` (14,3 s) : « Ton jeudi soir » + check-list (dernier élément : « Nouvelles rencontres »)
+  - `Pub-Adultes-V4-Check-list` (14,3 s) : « Ton jeudi soir » + check-list (4 cases cochées puis phrase finale « Il ne manque que toi »)
 
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation

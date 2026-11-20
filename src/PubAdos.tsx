@@ -137,12 +137,14 @@ export type CheckListProps = {
   surtitre: string;
   titre: string;
   liste: string[];
+  chute?: string; // phrase finale sans case à cocher, après la liste
   fin: { cta: string; ctaInfos: string[]; ctaBouton: string };
 };
 const CL_TITRE = 2.2; // secondes avant le 1er élément
 const CL_PAS = 1.6; // secondes entre deux éléments
 const CL_FIN_LISTE = 2.2; // temps de lecture après le dernier élément
-const dureePlanCL = (p: CheckListProps) => CL_TITRE + CL_PAS * (p.liste.length - 1) + CL_FIN_LISTE;
+const nbEtapes = (p: CheckListProps) => p.liste.length + (p.chute ? 1 : 0);
+const dureePlanCL = (p: CheckListProps) => CL_TITRE + CL_PAS * (nbEtapes(p) - 1) + CL_FIN_LISTE;
 export const dureeCheckList = (p: CheckListProps, fps: number) => Math.round((dureePlanCL(p) + SECONDES_CTA) * fps);
 
 const Coche: React.FC<{ texte: string; retard: number }> = ({ texte, retard }) => {
@@ -162,8 +164,19 @@ const Coche: React.FC<{ texte: string; retard: number }> = ({ texte, retard }) =
   );
 };
 
+const Chute: React.FC<{ texte: string; retard: number }> = ({ texte, retard }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const s = spring({ frame: frame - retard, fps, config: { damping: 12, mass: 0.6 } });
+  return (
+    <div style={{ marginTop: 34, marginRight: 90, alignSelf: "flex-start", opacity: s, transform: `scale(${interpolate(s, [0, 1], [0.7, 1])})`, transformOrigin: "left center" }}>
+      <div style={{ fontFamily: POLICE, fontWeight: 800, fontSize: 64, color: "#000", backgroundColor: "#fff", padding: "14px 30px", textTransform: "uppercase", lineHeight: 1.1 }}>{texte}</div>
+    </div>
+  );
+};
+
 export const CheckList: React.FC<CheckListProps> = (props) => {
-  const { clips, surtitre, titre, liste, fin } = props;
+  const { clips, surtitre, titre, liste, chute, fin } = props;
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const plan = Math.round(dureePlanCL(props) * fps);
@@ -185,6 +198,7 @@ export const CheckList: React.FC<CheckListProps> = (props) => {
           {liste.map((item, i) => (
             <Coche key={item} texte={item} retard={Math.round((CL_TITRE + i * CL_PAS) * fps)} />
           ))}
+          {chute && <Chute texte={chute} retard={Math.round((CL_TITRE + liste.length * CL_PAS) * fps)} />}
         </AbsoluteFill>
       </Sequence>
       <Sequence from={plan} durationInFrames={Math.round(SECONDES_CTA * fps)}>
