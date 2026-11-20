@@ -11,7 +11,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 | # | Vidéo | Type | Format | Plateforme | Statut | Échéance | Notes |
 |---|-------|------|--------|------------|--------|----------|-------|
 | 001 | Intro MKD Studio | Intro / générique | 9:16 · 3 s | Reels, TikTok | 👀 À valider | — | V3 : sous-titre « MORE THAN DANCE » (`Intro`) ou « BIEN PLUS QUE DES COURS DE DANSE » (`Intro-FR`) — choisir la version |
-| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V3 (`Pub-Formation`, ≈ 19 s, sans musique) : accroche → Groupe formation → Voyages → Cours intensifs → Shootings → Profs invités → fin. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
+| 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V4 (`Pub-Formation`, ≈ 19 s, sans musique) : « Envie de faire partie d'un groupe de danse ? » → Groupe formation → Voyages → Cours intensifs → Shootings → Et bien plus… → fin. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
 
 ## Idées / à venir
 
@@ -57,10 +57,11 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - rush6 : danse à deux, caméra à la main
 - V1 montée.
 - V2 : nouvelle accroche sur la vidéo du couloir, rubrique « Concours » supprimée.
-- V3 : 2 nouveaux rushs (rush7 grande salle, rush8 danse en cercle) pour « Groupe formation » ; photo MKD déplacée dans « Shootings » ; « More than dance » supprimée ; « Profs invités » réduit au prof au t-shirt Tupac. Manque : musique.
+- V3 : 2 nouveaux rushs (rush7 grande salle, rush8 danse en cercle) pour « Groupe formation » ; photo MKD déplacée dans « Shootings » ; « More than dance » supprimée ; « Profs invités » réduit au prof au t-shirt Tupac. 
+- V4 : accroche raccourcie (« Envie de faire partie d'un groupe de danse ? »), « Profs invités » remplacé par « Et bien plus… ». Manque : musique.
 
 **Prochaines étapes**
-- [ ] Valider la V3 de la pub Formation
+- [ ] Valider la V4 de la pub Formation
 - [ ] Choisir la musique
 - [ ] Choisir la version de l'intro (EN ou FR)
 - [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin

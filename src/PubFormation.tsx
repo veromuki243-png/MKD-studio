@@ -33,12 +33,12 @@ const R = (n: number) => `rushs/formation/rush${n}.mp4`;
 
 export const PLANS_PAR_DEFAUT: PubFormationProps = {
   plans: [
-    { texte: "T'as envie de faire partie d'un groupe de danse ?", clips: [{ rush: R(1), debut: 0, duree: 1.9, vitesse: 0.75 }, { rush: R(1), debut: 1.45, duree: 0.95 }], duree: 2.85, placeholder: "Couloir + studio" },
+    { texte: "Envie de faire partie d'un groupe de danse ?", clips: [{ rush: R(1), debut: 0, duree: 1.9, vitesse: 0.75 }, { rush: R(1), debut: 1.45, duree: 0.95 }], duree: 2.85, placeholder: "Couloir + studio" },
     { texte: "Le groupe formation", petit: "MKD Studio", enHaut: true, clips: [{ rush: R(7), debut: 0.5, duree: 2 }, { rush: R(8), debut: 0.3, duree: 1.5 }], duree: 3.5, placeholder: "Le groupe formation en cours" },
     { texte: "Voyages", clips: [{ rush: R(1), debut: 5.7, duree: 1.2 }, { rush: R(1), debut: 8.45, duree: 1.3 }], duree: 2.5, placeholder: "Aéroport + ville" },
     { texte: "Cours intensifs", clips: [{ rush: R(4), debut: 10.7, duree: 2.2 }], duree: 2.2, placeholder: "Travail au sol" },
     { texte: "Shootings", petit: "Photo & vidéo", enHaut: true, clips: [{ rush: R(3), debut: 0.4, duree: 1.4 }, { rush: R(5), debut: 0, duree: 1.6 }], duree: 3, placeholder: "Backstage shooting + photo de groupe MKD" },
-    { texte: "Profs invités", clips: [{ rush: R(1), debut: 2.42, duree: 1.5, vitesse: 0.8 }], duree: 1.5, placeholder: "Prof invité en cours" },
+    { texte: "Et bien plus…", clips: [{ rush: R(1), debut: 2.42, duree: 1.5, vitesse: 0.8 }], duree: 1.5, placeholder: "Moment de cours" },
   ],
   cta: "Inscriptions ouvertes",
   ctaInfos: ["Groupes ados & adultes", "Dès 11 ans"],
