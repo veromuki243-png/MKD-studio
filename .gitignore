@@ -4,3 +4,6 @@ out/
 
 # Rushs des cours ados (élèves mineurs) : gardés hors du dépôt
 public/rushs/ados/
+
+# Rushs des cours adultes (visages non floutés) : gardés hors du dépôt
+public/rushs/adultes/

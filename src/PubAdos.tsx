@@ -87,51 +87,63 @@ const Partage: React.FC<Duo> = ({ haut, bas, texteHaut, texteBas }) => (
   </AbsoluteFill>
 );
 
-const V3_SEQ = { intro: 2.6, duo1: 2.8, duo2: 2.8, jours: 2.8 };
-export const dureeAdosV3 = (fps: number) => Math.round((V3_SEQ.intro + V3_SEQ.duo1 + V3_SEQ.duo2 + V3_SEQ.jours + SECONDES_CTA) * fps);
+// Composant générique, réutilisé pour les adultes
+export type EcranPartageProps = {
+  intro: { clip: Clip; texte: string; petit?: string };
+  duos: Duo[];
+  fin: { cta: string; ctaInfos: string[]; ctaBouton: string };
+};
+const INTRO_S = 2.6;
+const DUO_S = 2.8;
+export const dureeEcranPartage = (p: EcranPartageProps, fps: number) => Math.round((INTRO_S + DUO_S * p.duos.length + SECONDES_CTA) * fps);
 
-export const PubAdosV3: React.FC = () => {
+export const EcranPartage: React.FC<EcranPartageProps> = ({ intro, duos, fin }) => {
   const { fps } = useVideoConfig();
-  const f = (s: number) => Math.round(s * fps);
-  let t = 0;
-  const at = (d: number) => {
-    const from = t;
-    t += f(d);
-    return { from, durationInFrames: f(d) };
-  };
+  const f = (x: number) => Math.round(x * fps);
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
-      <Sequence {...at(V3_SEQ.intro)}>
-        <Clips clips={[{ rush: A(10), debut: 0, duree: V3_SEQ.intro }]} />
+      <Sequence durationInFrames={f(INTRO_S)}>
+        <Clips clips={[{ ...intro.clip, duree: INTRO_S }]} />
         <AbsoluteFill style={{ background: "rgba(0,0,0,0.3)" }} />
-        <Texte texte="Cours ados" grand={false} />
+        <Texte texte={intro.texte} petit={intro.petit} grand={false} />
       </Sequence>
-      <Sequence {...at(V3_SEQ.duo1)}>
-        <Partage haut={{ rush: A(11), debut: 1, duree: 3 }} bas={{ rush: A(9), debut: 3, duree: 3 }} texteHaut="Hip-hop" texteBas="Afro" />
-        <Flash />
-      </Sequence>
-      <Sequence {...at(V3_SEQ.duo2)}>
-        <Partage haut={{ rush: A(14), debut: 0, duree: 3 }} bas={{ rush: A(18), debut: 2.5, duree: 3 }} texteHaut="Freestyle" texteBas="Chorégraphie" />
-        <Flash />
-      </Sequence>
-      <Sequence {...at(V3_SEQ.jours)}>
-        <Partage haut={{ rush: A(2), debut: 3, duree: 3 }} bas={{ rush: A(5), debut: 2, duree: 3 }} texteHaut="Mercredi" texteBas="Jeudi" />
-        <Flash />
-      </Sequence>
-      <Sequence from={t} durationInFrames={f(SECONDES_CTA)}>
-        <CarteFin {...FIN} ctaInfos={["Mercredi & jeudi", "Dès 11 ans"]} />
+      {duos.map((d, i) => (
+        <Sequence key={i} from={f(INTRO_S + i * DUO_S)} durationInFrames={f(DUO_S)}>
+          <Partage {...d} />
+          <Flash />
+        </Sequence>
+      ))}
+      <Sequence from={f(INTRO_S + duos.length * DUO_S)} durationInFrames={f(SECONDES_CTA)}>
+        <CarteFin {...fin} />
       </Sequence>
     </AbsoluteFill>
   );
 };
 
+export const ADOS_V3: EcranPartageProps = {
+  intro: { clip: { rush: A(10), debut: 0, duree: INTRO_S }, texte: "Cours ados" },
+  duos: [
+    { haut: { rush: A(11), debut: 1, duree: 3 }, bas: { rush: A(9), debut: 3, duree: 3 }, texteHaut: "Hip-hop", texteBas: "Afro" },
+    { haut: { rush: A(14), debut: 0, duree: 3 }, bas: { rush: A(18), debut: 2.5, duree: 3 }, texteHaut: "Freestyle", texteBas: "Chorégraphie" },
+    { haut: { rush: A(2), debut: 3, duree: 3 }, bas: { rush: A(5), debut: 2, duree: 3 }, texteHaut: "Mercredi", texteBas: "Jeudi" },
+  ],
+  fin: { ...FIN, ctaInfos: ["Mercredi & jeudi", "Dès 11 ans"] },
+};
+
 // ───────────── V4 « Check-list » : un seul plan immersif, infos qui s'empilent ─────────────
-const V4_LISTE = ["Hip-hop", "Afro", "Freestyle", "Chorégraphie", "Mercredi & jeudi"];
-const V4_TITRE = 2.2; // secondes avant le 1er élément
-const V4_PAS = 1.6; // secondes entre deux éléments
-const V4_FIN_LISTE = 2.2; // temps de lecture après le dernier élément
-const V4_PLAN = V4_TITRE + V4_PAS * (V4_LISTE.length - 1) + V4_FIN_LISTE;
-export const dureeAdosV4 = (fps: number) => Math.round((V4_PLAN + SECONDES_CTA) * fps);
+// Composant générique, réutilisé pour les adultes
+export type CheckListProps = {
+  clips: Clip[]; // plan(s) de fond, durée totale ≥ durée du plan
+  surtitre: string;
+  titre: string;
+  liste: string[];
+  fin: { cta: string; ctaInfos: string[]; ctaBouton: string };
+};
+const CL_TITRE = 2.2; // secondes avant le 1er élément
+const CL_PAS = 1.6; // secondes entre deux éléments
+const CL_FIN_LISTE = 2.2; // temps de lecture après le dernier élément
+const dureePlanCL = (p: CheckListProps) => CL_TITRE + CL_PAS * (p.liste.length - 1) + CL_FIN_LISTE;
+export const dureeCheckList = (p: CheckListProps, fps: number) => Math.round((dureePlanCL(p) + SECONDES_CTA) * fps);
 
 const Coche: React.FC<{ texte: string; retard: number }> = ({ texte, retard }) => {
   const frame = useCurrentFrame();
@@ -150,33 +162,43 @@ const Coche: React.FC<{ texte: string; retard: number }> = ({ texte, retard }) =
   );
 };
 
-export const PubAdosV4: React.FC = () => {
+export const CheckList: React.FC<CheckListProps> = (props) => {
+  const { clips, surtitre, titre, liste, fin } = props;
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const plan = Math.round(V4_PLAN * fps);
-  const titre = spring({ frame, fps, config: { damping: 15 } });
+  const plan = Math.round(dureePlanCL(props) * fps);
+  const t = spring({ frame, fps, config: { damping: 15 } });
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <Sequence durationInFrames={plan}>
-        <Clips clips={[{ rush: A(10), debut: 1, duree: V4_PLAN }]} />
+        <Clips clips={clips} />
         <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 45%, rgba(0,0,0,0.55) 100%)" }} />
         <AbsoluteFill style={{ alignItems: "center", paddingTop: 260 }}>
-          <div style={{ fontFamily: POLICE, fontWeight: 300, fontSize: 44, letterSpacing: 10, color: "#fff", textTransform: "uppercase", opacity: titre, textShadow: "0 2px 18px rgba(0,0,0,0.9)" }}>
-            Cours ados · MKD Studio
+          <div style={{ fontFamily: POLICE, fontWeight: 300, fontSize: 44, letterSpacing: 10, color: "#fff", textTransform: "uppercase", opacity: t, textShadow: "0 2px 18px rgba(0,0,0,0.9)" }}>
+            {surtitre}
           </div>
-          <div style={{ fontFamily: POLICE, fontWeight: 800, fontSize: 88, color: "#fff", textTransform: "uppercase", textAlign: "center", lineHeight: 1.05, marginTop: 20, maxWidth: 940, opacity: titre, textShadow: "0 4px 30px rgba(0,0,0,0.7)" }}>
-            Ce qui t'attend
+          <div style={{ fontFamily: POLICE, fontWeight: 800, fontSize: 88, color: "#fff", textTransform: "uppercase", textAlign: "center", lineHeight: 1.05, marginTop: 20, maxWidth: 940, opacity: t, textShadow: "0 4px 30px rgba(0,0,0,0.7)" }}>
+            {titre}
           </div>
         </AbsoluteFill>
         <AbsoluteFill style={{ justifyContent: "flex-end", paddingLeft: 90, paddingBottom: 470, gap: 26 }}>
-          {V4_LISTE.map((item, i) => (
-            <Coche key={item} texte={item} retard={Math.round((V4_TITRE + i * V4_PAS) * fps)} />
+          {liste.map((item, i) => (
+            <Coche key={item} texte={item} retard={Math.round((CL_TITRE + i * CL_PAS) * fps)} />
           ))}
         </AbsoluteFill>
       </Sequence>
       <Sequence from={plan} durationInFrames={Math.round(SECONDES_CTA * fps)}>
-        <CarteFin {...FIN} ctaInfos={["Mercredi & jeudi", "Dès 11 ans"]} />
+        <CarteFin {...fin} />
       </Sequence>
     </AbsoluteFill>
   );
+};
+
+const ADOS_V4_PLAN = CL_TITRE + CL_PAS * 4 + CL_FIN_LISTE;
+export const ADOS_V4: CheckListProps = {
+  clips: [{ rush: A(10), debut: 1, duree: ADOS_V4_PLAN }],
+  surtitre: "Cours ados · MKD Studio",
+  titre: "Ce qui t'attend",
+  liste: ["Hip-hop", "Afro", "Freestyle", "Chorégraphie", "Mercredi & jeudi"],
+  fin: { ...FIN, ctaInfos: ["Mercredi & jeudi", "Dès 11 ans"] },
 };

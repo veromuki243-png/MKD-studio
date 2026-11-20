@@ -24,6 +24,7 @@ export type Plan = {
   duree: number; // durée du plan si pas de clips (emplacement vide)
   placeholder: string; // description du plan à tourner / choisir
   enHaut?: boolean; // texte en haut pour laisser voir le sujet
+  fondNoir?: boolean; // carton texte sur fond noir (sans vidéo)
 };
 
 export type PubFormationProps = { plans: Plan[]; cta: string; ctaInfos: string[]; ctaBouton: string };
@@ -156,6 +157,8 @@ export const PubFormation: React.FC<PubFormationProps> = ({ plans, cta, ctaInfos
           <Sequence key={i} from={from} durationInFrames={duree}>
             {plan.clips ? (
               <Clips clips={plan.clips} />
+            ) : plan.fondNoir ? (
+              <AbsoluteFill style={{ backgroundColor: "#000" }} />
             ) : (
               <Placeholder description={plan.placeholder} index={i} />
             )}
