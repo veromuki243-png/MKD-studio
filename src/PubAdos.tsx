@@ -3,6 +3,7 @@ import { POLICE } from "./polices";
 import { CarteFin, Clip, Clips, Flash, PubFormationProps, SECONDES_CTA, Texte } from "./PubFormation";
 
 // Pubs Meta « Cours ados » — 4 versions, 9:16.
+// Rushs par style (validé par l'école) : hip-hop = ado7, 11, 12, 13, 15 · afro = ado3, 6, 9, 10 · freestyle = ado14, 16
 // Messages : hip-hop & afro · freestyle & chorés commerciales · mercredi & jeudi · dès 11 ans.
 
 const A = (n: number) => `rushs/ados/ado${n}.mp4`;
@@ -14,9 +15,9 @@ export const ADOS_V1: PubFormationProps = {
   plans: [
     { texte: "Tu cherches un cours de danse ?", clips: [{ rush: A(1), debut: 0, duree: 2.6 }], duree: 2.6, placeholder: "" },
     { texte: "Cours ados", petit: "MKD Studio", clips: [{ rush: A(2), debut: 0.5, duree: 2.2 }], duree: 2.2, placeholder: "" },
-    { texte: "Hip-hop", clips: [{ rush: A(6), debut: 0, duree: 2 }], duree: 2, placeholder: "" },
+    { texte: "Hip-hop", clips: [{ rush: A(15), debut: 5, duree: 2.2 }], duree: 2.2, placeholder: "" },
     { texte: "Afro", clips: [{ rush: A(9), debut: 2, duree: 2 }], duree: 2, placeholder: "" },
-    { texte: "Freestyle", clips: [{ rush: A(10), debut: 4, duree: 2 }], duree: 2, placeholder: "" },
+    { texte: "Freestyle", clips: [{ rush: A(16), debut: 0, duree: 2.2 }], duree: 2.2, placeholder: "" },
     { texte: "Chorés commerciales", clips: [{ rush: A(4), debut: 1, duree: 2.3 }], duree: 2.3, placeholder: "" },
     { texte: "Mercredi & jeudi", clips: [{ rush: A(8), debut: 0.5, duree: 2.4 }], duree: 2.4, placeholder: "" },
   ],
@@ -28,9 +29,9 @@ export const ADOS_V1: PubFormationProps = {
 // ───────────── V2 « Rythme » : mots-chocs, coupes rapides ─────────────
 export const ADOS_V2: PubFormationProps = {
   plans: [
-    { texte: "Hip-hop", clips: [{ rush: A(3), debut: 0.5, duree: 1.2 }], duree: 1.2, placeholder: "" },
+    { texte: "Hip-hop", clips: [{ rush: A(12), debut: 1, duree: 1.2 }], duree: 1.2, placeholder: "" },
     { texte: "Afro", clips: [{ rush: A(10), debut: 10, duree: 1.2 }], duree: 1.2, placeholder: "" },
-    { texte: "Freestyle", clips: [{ rush: A(1), debut: 4.5, duree: 1.2 }], duree: 1.2, placeholder: "" },
+    { texte: "Freestyle", clips: [{ rush: A(14), debut: 0.3, duree: 1.2 }], duree: 1.2, placeholder: "" },
     { texte: "Chorés", petit: "commerciales", clips: [{ rush: A(8), debut: 2, duree: 1.4 }], duree: 1.4, placeholder: "" },
     { texte: "Tous les mercredis & jeudis", clips: [{ rush: A(7), debut: 0, duree: 1.4 }, { rush: A(5), debut: 1, duree: 1.4 }], duree: 2.8, placeholder: "" },
     { texte: "Pour les ados", petit: "Dès 11 ans", clips: [{ rush: A(2), debut: 4.5, duree: 2.2 }], duree: 2.2, placeholder: "" },
@@ -111,11 +112,11 @@ export const PubAdosV3: React.FC = () => {
         <Texte texte="Cours ados" petit="Le programme" grand={false} />
       </Sequence>
       <Sequence {...at(V3_SEQ.duo1)}>
-        <Partage haut={{ rush: A(6), debut: 0, duree: 3 }} bas={{ rush: A(9), debut: 3, duree: 3 }} texteHaut="Hip-hop" texteBas="Afro" />
+        <Partage haut={{ rush: A(11), debut: 1, duree: 3 }} bas={{ rush: A(9), debut: 3, duree: 3 }} texteHaut="Hip-hop" texteBas="Afro" />
         <Flash />
       </Sequence>
       <Sequence {...at(V3_SEQ.duo2)}>
-        <Partage haut={{ rush: A(1), debut: 3.5, duree: 3 }} bas={{ rush: A(4), debut: 3, duree: 3 }} texteHaut="Freestyle" texteBas="Chorés commerciales" />
+        <Partage haut={{ rush: A(14), debut: 0, duree: 3 }} bas={{ rush: A(4), debut: 3, duree: 3 }} texteHaut="Freestyle" texteBas="Chorés commerciales" />
         <Flash />
       </Sequence>
       <Sequence {...at(V3_SEQ.jours)}>

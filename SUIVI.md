@@ -68,6 +68,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - `Pub-Ados-V2-Rythme` (13,5 s) : mots-chocs, coupes rapides
   - `Pub-Ados-V3-Ecran-partage` (14,5 s) : deux vidéos face à face (hip-hop/afro, freestyle/chorés, mercredi/jeudi)
   - `Pub-Ados-V4-Check-list` (14,3 s) : un seul plan, check-list qui se remplit
+- Correction : les plans « hip-hop » étaient de l'afro. 6 nouveaux rushs (ado11…16). Classement validé : hip-hop = ado7, 11, 12, 13, 15 · afro = ado3, 6, 9, 10 · freestyle = ado14, 16. V1, V2, V3 mises à jour.
 
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation
