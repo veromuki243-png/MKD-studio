@@ -14,6 +14,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
 | 002 | Pub Meta — Groupe Formation | Publicité | 9:16 · ≈ 22 s | Meta (Reels, Stories, fil) | 👀 À valider | — | V4 (`Pub-Formation`, ≈ 19 s, sans musique) : « Envie de faire partie d'un groupe de danse ? » → Groupe formation → Voyages → Cours intensifs → Shootings → Et bien plus… → fin. Inscriptions ados & adultes dès 11 ans, bouton « S'inscrire » : accroche « T'as envie de faire partie du groupe ? » → voyages, cours intensifs, shootings, profs invités, concours → « Rejoins le groupe » |
 | 003 | Pub Meta — Cours ados (4 versions) | Publicité A/B | 9:16 · 13–19 s | Meta | 👀 À valider | — | V1 Question · V2 Rythme · V3 Écran partagé · V4 Check-list. Messages : hip-hop & afro, freestyle & chorégraphie, mercredi & jeudi, dès 11 ans |
 | 004 | Pub Meta — Cours adultes (4 versions) | Publicité A/B | 9:16 · 14–20 s | Meta | 👀 À valider | — | V1 Question · V2 Métro-boulot-dodo · V3 Écran partagé · V4 Check-list. Afterwork & hip-hop, chaque jeudi, ambiance garantie |
+| 005 | Pub Meta — Cours enfants (4 versions) | Publicité A/B | 9:16 · 14–20 s | Meta | 👀 À valider | — | V1 Question · V2 Breakdance (garçons) · V3 Écran partagé · V4 Check-list. Danse, breakdance, prépa physique, confiance en soi, mercredi & jeudi. Bouton « Je l'inscris » |
 
 ## Idées / à venir
 
@@ -81,10 +82,20 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - `Pub-Adultes-V3-Ecran-partage` (14,5 s) : Afterwork/Hip-hop · Détente/Ambiance · Chaque/Jeudi
   - `Pub-Adultes-V4-Check-list` (14,3 s) : « Ton jeudi soir » + check-list (4 cases cochées puis phrase finale « Il ne manque que toi »)
 
+### Pub Meta — Cours enfants (4 versions)
+- 2026-11-21 : 7 rushs reçus → `public/rushs/enfants/enf1…7.mp4` (non enregistrés sur GitHub : mineurs).
+- Ton : on s'adresse aux parents (vouvoiement).
+- 4 versions :
+  - `Pub-Enfants-V1-Question` (19,8 s) : « Votre enfant aime bouger ? » → Plein d'énergie ? → Danse → Breakdance → Préparation physique → Confiance en soi → Mercredi & jeudi
+  - `Pub-Enfants-V2-Breakdance` (17,4 s) : pour attirer les garçons — « Votre fils ne tient pas en place ? » → « Il a besoin de se dépenser ? » → Breakdance → Force & agilité → Confiance en soi → Mercredi & jeudi
+  - `Pub-Enfants-V3-Ecran-partage` (14,5 s) : Danse/Breakdance · Prépa physique/Confiance en soi · Mercredi/Jeudi
+  - `Pub-Enfants-V4-Check-list` (14,3 s) : « Plein d'énergie ? » + check-list
+
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation
 - [ ] Choisir les versions ados à lancer (test A/B)
 - [ ] Valider le floutage et choisir les versions adultes
+- [ ] Choisir les versions enfants
 - [ ] Choisir la musique
 - [ ] Choisir la version de l'intro (EN ou FR)
 - [ ] Fournir les infos pratiques (adresse, Instagram, téléphone, offre d'essai) pour la carte de fin

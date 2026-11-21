@@ -7,3 +7,6 @@ public/rushs/ados/
 
 # Rushs des cours adultes (visages non floutés) : gardés hors du dépôt
 public/rushs/adultes/
+
+# Rushs des cours enfants (mineurs) : gardés hors du dépôt
+public/rushs/enfants/

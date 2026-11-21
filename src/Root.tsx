@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { Intro } from "./Intro";
 import { ADOS_V1, ADOS_V2, ADOS_V3, ADOS_V4, CheckList, dureeCheckList, dureeEcranPartage, EcranPartage } from "./PubAdos";
+import { ENFANTS_V1, ENFANTS_V2, ENFANTS_V3, ENFANTS_V4 } from "./PubEnfants";
 import { ADULTES_V1, ADULTES_V2, ADULTES_V3, ADULTES_V4 } from "./PubAdultes";
 import { dureePub, PLANS_PAR_DEFAUT, PubFormation } from "./PubFormation";
 
@@ -47,6 +48,11 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Pub-Adultes-V2-Metro-boulot-dodo" component={PubFormation} durationInFrames={dureePub(ADULTES_V2, 30)} fps={30} width={1080} height={1920} defaultProps={ADULTES_V2} />
       <Composition id="Pub-Adultes-V3-Ecran-partage" component={EcranPartage} durationInFrames={dureeEcranPartage(ADULTES_V3, 30)} fps={30} width={1080} height={1920} defaultProps={ADULTES_V3} />
       <Composition id="Pub-Adultes-V4-Check-list" component={CheckList} durationInFrames={dureeCheckList(ADULTES_V4, 30)} fps={30} width={1080} height={1920} defaultProps={ADULTES_V4} />
+      {/* Pubs Meta « Cours enfants » — 4 versions, 9:16 */}
+      <Composition id="Pub-Enfants-V1-Question" component={PubFormation} durationInFrames={dureePub(ENFANTS_V1, 30)} fps={30} width={1080} height={1920} defaultProps={ENFANTS_V1} />
+      <Composition id="Pub-Enfants-V2-Breakdance" component={PubFormation} durationInFrames={dureePub(ENFANTS_V2, 30)} fps={30} width={1080} height={1920} defaultProps={ENFANTS_V2} />
+      <Composition id="Pub-Enfants-V3-Ecran-partage" component={EcranPartage} durationInFrames={dureeEcranPartage(ENFANTS_V3, 30)} fps={30} width={1080} height={1920} defaultProps={ENFANTS_V3} />
+      <Composition id="Pub-Enfants-V4-Check-list" component={CheckList} durationInFrames={dureeCheckList(ENFANTS_V4, 30)} fps={30} width={1080} height={1920} defaultProps={ENFANTS_V4} />
     </>
   );
 };
