@@ -91,6 +91,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - `Pub-Enfants-V3-Ecran-partage` (14,5 s) : Danse/Breakdance · Prépa physique/Confiance en soi · Mercredi/Jeudi
   - `Pub-Enfants-V4-Check-list` (14,3 s) : « Plein d'énergie ? » + check-list
 - Retours : breakdance uniquement le mercredi (V2 « Tous les mercredis » + carte « Le mercredi » ; V1 « Break le mercredi » sous « Mercredi & jeudi ») ; plan de figures remplacé par l'extrait recoupé enf8 (ralenti), sans la chute ; V4 démarre 2,3 s plus tard, quand les enfants dansent.
+- Grand groupe remplacé par l'extrait recoupé enf9 (4,4 s) dans V1, V3 et V4 ; la V4 enchaîne ensuite sur la chorégraphie de dos (enf7).
 
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation
