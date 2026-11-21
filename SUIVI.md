@@ -90,6 +90,7 @@ Tableau de bord de toutes les vidéos de l'école : ce qui est en cours, ce qui 
   - `Pub-Enfants-V2-Breakdance` (17,4 s) : pour attirer les garçons — « Votre fils ne tient pas en place ? » → « Il a besoin de se dépenser ? » → Breakdance → Force & agilité → Confiance en soi → Mercredi & jeudi
   - `Pub-Enfants-V3-Ecran-partage` (14,5 s) : Danse/Breakdance · Prépa physique/Confiance en soi · Mercredi/Jeudi
   - `Pub-Enfants-V4-Check-list` (14,3 s) : « Plein d'énergie ? » + check-list
+- Retours : breakdance uniquement le mercredi (V2 « Tous les mercredis » + carte « Le mercredi » ; V1 « Break le mercredi » sous « Mercredi & jeudi ») ; plan de figures remplacé par l'extrait recoupé enf8 (ralenti), sans la chute ; V4 démarre 2,3 s plus tard, quand les enfants dansent.
 
 **Prochaines étapes**
 - [ ] Valider la V4 de la pub Formation

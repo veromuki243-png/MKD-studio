@@ -6,7 +6,9 @@ import { PubFormationProps } from "./PubFormation";
 // préparation physique · breakdance (attirer plus de garçons) · mercredi & jeudi.
 // Rushs : enf1 circuit au sol (cerceaux, pompes) · enf2 échelle de rythme + course à quatre pattes
 //         enf3 grand cours face au miroir · enf4 garçons en cours de break · enf5 break au sol (figures)
-//         enf6 garçon en rouge qui danse · enf7 chorégraphie de dos · (enf5 = extrait de enf4)
+//         enf6 garçon en rouge qui danse · enf7 chorégraphie de dos
+//         enf8 figures de break recoupées (1,4 s) : à utiliser à la place de enf5, où un enfant tombe
+// Breakdance : uniquement le mercredi.
 
 const E = (n: number) => `rushs/enfants/enf${n}.mp4`;
 
@@ -18,10 +20,10 @@ export const ENFANTS_V1: PubFormationProps = {
     { texte: "Votre enfant aime bouger ?", clips: [{ rush: E(6), debut: 0, duree: 2.6, vitesse: 0.85 }], duree: 2.6, placeholder: "" },
     { texte: "Plein d'énergie ?", clips: [{ rush: E(2), debut: 0.2, duree: 2.2 }], duree: 2.2, placeholder: "" },
     { texte: "Danse", clips: [{ rush: E(3), debut: 4, duree: 2.2 }], duree: 2.2, placeholder: "" },
-    { texte: "Breakdance", clips: [{ rush: E(5), debut: 0, duree: 2.4 }], duree: 2.4, placeholder: "" },
+    { texte: "Breakdance", clips: [{ rush: E(8), debut: 0, duree: 2.3, vitesse: 0.6 }], duree: 2.3, placeholder: "" },
     { texte: "Préparation physique", clips: [{ rush: E(1), debut: 0.3, duree: 2.4 }], duree: 2.4, placeholder: "" },
     { texte: "Confiance en soi", clips: [{ rush: E(7), debut: 1, duree: 2.3 }], duree: 2.3, placeholder: "" },
-    { texte: "Mercredi & jeudi", clips: [{ rush: E(3), debut: 9, duree: 2.2 }], duree: 2.2, placeholder: "" },
+    { texte: "Mercredi & jeudi", petit: "Break le mercredi", clips: [{ rush: E(3), debut: 9, duree: 2.4 }], duree: 2.4, placeholder: "" },
   ],
   ...FIN,
 };
@@ -31,20 +33,21 @@ export const ENFANTS_V2: PubFormationProps = {
   plans: [
     { texte: "Votre fils ne tient pas en place ?", clips: [{ rush: E(4), debut: 0, duree: 2.7 }], duree: 2.7, placeholder: "" },
     { texte: "Il a besoin de se dépenser ?", clips: [{ rush: E(2), debut: 4.2, duree: 2.4 }], duree: 2.4, placeholder: "" },
-    { texte: "Breakdance", petit: "Cours enfants", clips: [{ rush: E(5), debut: 0, duree: 2.6 }], duree: 2.6, placeholder: "" },
+    { texte: "Breakdance", petit: "Cours enfants", clips: [{ rush: E(8), debut: 0, duree: 2.3, vitesse: 0.6 }], duree: 2.3, placeholder: "" },
     { texte: "Force & agilité", clips: [{ rush: E(1), debut: 1, duree: 2 }], duree: 2, placeholder: "" },
     { texte: "Confiance en soi", clips: [{ rush: E(4), debut: 2.7, duree: 2 }], duree: 2, placeholder: "" },
-    { texte: "Mercredi & jeudi", clips: [{ rush: E(4), debut: 5, duree: 2.2 }], duree: 2.2, placeholder: "" },
+    { texte: "Tous les mercredis", clips: [{ rush: E(4), debut: 5, duree: 2.2 }], duree: 2.2, placeholder: "" },
   ],
   ...FIN,
   cta: "Breakdance enfants",
+  ctaInfos: ["Le mercredi", "MKD Studio"],
 };
 
 // ───────────── V3 « Écran partagé » ─────────────
 export const ENFANTS_V3: EcranPartageProps = {
   intro: { clip: { rush: E(3), debut: 0, duree: 2.6 }, texte: "Cours enfants" },
   duos: [
-    { haut: { rush: E(7), debut: 0, duree: 3 }, bas: { rush: E(5), debut: 0, duree: 3 }, texteHaut: "Danse", texteBas: "Breakdance" },
+    { haut: { rush: E(7), debut: 0, duree: 3 }, bas: [{ rush: E(8), debut: 0, duree: 2.3, vitesse: 0.6 }, { rush: E(4), debut: 6.5, duree: 0.5 }], texteHaut: "Danse", texteBas: "Breakdance" },
     { haut: { rush: E(1), debut: 0.3, duree: 3 }, bas: { rush: E(4), debut: 2.5, duree: 3 }, texteHaut: "Prépa physique", texteBas: "Confiance en soi" },
     { haut: { rush: E(3), debut: 6, duree: 3 }, bas: { rush: E(2), debut: 0, duree: 3 }, texteHaut: "Mercredi", texteBas: "Jeudi" },
   ],
@@ -53,7 +56,7 @@ export const ENFANTS_V3: EcranPartageProps = {
 
 // ───────────── V4 « Check-list » ─────────────
 export const ENFANTS_V4: CheckListProps = {
-  clips: [{ rush: E(3), debut: 0, duree: 11 }],
+  clips: [{ rush: E(3), debut: 2.3, duree: 10.8 }], // les enfants commencent à danser vers 2 s
   surtitre: "Cours enfants · MKD Studio",
   titre: "Plein d'énergie ?",
   liste: ["Danse", "Breakdance", "Préparation physique", "Confiance en soi", "Mercredi & jeudi"],
